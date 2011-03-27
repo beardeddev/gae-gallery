@@ -1,6 +1,9 @@
-{% extends 'layouts/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <h1>
-{{ hello }}
+{% for image in images %}
+	{{ image.key() }}
+	<br/>
+{% endfor %}
 </h1>
 {% endblock %}

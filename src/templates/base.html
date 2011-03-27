@@ -13,17 +13,17 @@
 			<div class="block_header">
 				<div class="logo">
 					<h1>
-						<a href="index.html">Авторская галлерея</a>
+						<a href="/">Авторская галерея</a>
 					</h1>
 				</div>
 				<div class="menu">
 					<ul>
-						<li><a href="index.html">Домой</a></li>
-						<li><a href="about.html">О сайте</a></li>
-						<li><a href="contact.html">Контакты</a></li>
-						<li><a href="guestbook.html">Гостевая книга</a></li>
-						<li><a href="{{ url_for('create_image') }}" {% if request.path == '/images/edit.html' %} class="active" {% endif %} >Добавить рисунок</a></li>
-						<li><a href="rss.xml">RSS</a></li>
+						<li><a href="/">Домой</a></li>
+						<li><a href="/about.html">О сайте</a></li>
+						<li><a href="/contact.html">Контакты</a></li>
+						<li><a href="/guestbook.html">Гостевая книга</a></li>
+						<li><a href="{{ url_for('create') }}" {% if request.path == '/images/edit.html' %} class="active" {% endif %} >Добавить рисунок</a></li>
+						<li><a href="/rss.xml">RSS</a></li>
 					</ul>
 				</div>
 				<div class="clr"></div>

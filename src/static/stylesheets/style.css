@@ -60,7 +60,6 @@ ul li{border:0; margin:0; padding:0;}
 
 /********** contact form **********/
 form { margin:0; padding:5px 10px;}
-form * { color:#F00;}
 form ol { margin:0; padding:0; list-style:none;}
 form li { margin:0; padding:0; background:none; border:none; display:block; clear:both;}
 form li.buttons { margin:5px 0 5px 0;}
