@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+{% import 'macros/summary.html' as forms %} 
+{% block content %}
+<div class="right">
+	<h2>{{title}}</h2>
+	{{ forms.summary(form) }}
+	<form action="{{url_for('create_status')}}" method="post">
+		<ol>
+			<li>{{ form.title.label }} {{ form.title }}</li>
+			<li><input type="submit" value="Сохранить" /></li>
+		</ol>
+	</form>
+</div>
+{% endblock %}
