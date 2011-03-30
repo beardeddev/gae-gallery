@@ -5,7 +5,7 @@ Created on 27.03.2011
 @author: ded
 '''
 
-from flask import Flask, redirect, render_template, request, url_for, make_response
+from flask import Flask, redirect, render_template, request, url_for, make_response, send_file
 from google.appengine.ext.webapp.util import run_wsgi_app
 from models import *
 from forms import *
@@ -29,9 +29,8 @@ def create():
         form = ImageForm(request.form, image)
         if form.validate() and request.files['image']:
             form.populate_obj(image)
-            if request.files['image']:
-                print request.files['image'].name
-                image.file = request.files['image'].read()
+            image.file = request.files['image'].read()
+            image.content_type = request.files['image'].content_type
             image.put()
             return redirect(url_for("edit", id=image.key()))
         else:
@@ -43,6 +42,13 @@ def edit(id):
     image = Image.get(id) 
     form  = ImageForm(request.form, image)
     return render_template('edit.html', title=u'Редактировать рисунок', form=form)      
+
+@app.route('/thumb/<id>.html')
+def thumb(id):
+    image = Image.get(id)
+    response = make_response(image.file)
+    response.headers['Content-Type'] = image.content_type
+    return response
 
 if __name__ == "__main__":
     run_wsgi_app(app)

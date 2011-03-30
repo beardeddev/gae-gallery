@@ -13,6 +13,7 @@ class Image(db.Model):
     sub_title = db.StringProperty(verbose_name=u'Подзаголовок')
     description = db.TextProperty(verbose_name=u'Описание')
     file = db.BlobProperty(verbose_name=u'Файл изображения')
+    content_type = db.StringProperty(verbose_name=u'Тип')
     created_at = db.DateTimeProperty(verbose_name=u'Создано', auto_now=False, auto_now_add=True)
     updated_at = db.DateTimeProperty(verbose_name=u'Обновлено', auto_now=True, auto_now_add=True)
     

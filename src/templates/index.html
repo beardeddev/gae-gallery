@@ -2,8 +2,7 @@
 {% block content %}
 <h1>
 {% for image in images %}
-	{{ image.key() }}
-	<br/>
+	<a href="{{ image.key() }}"><img src="" /></a>
 {% endfor %}
 </h1>
 {% endblock %}
