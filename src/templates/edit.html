@@ -1,6 +1,9 @@
 {% extends 'base.html' %} 
 {% import 'summary.html' as forms %}
 {% block content %}
+<div class="left">
+<img src="{{ url_for('thumb', id=picture.key(), width=310, height=0, ext=picture.ext) }}" />
+</div>
 <div class="right">
 	<h2>{{title}}</h2>
 	{{ forms.summary(form) }}
@@ -9,7 +12,7 @@
 			<li>{{ form.title.label }} {{ form.title }}</li>
 			<li>{{ form.sub_title.label }} {{ form.sub_title }}</li>
 			<li>{{ form.description.label }} {{ form.description }}</li>
-			<li>{{ form.image.label }} {{ form.image }}</li>
+			<li>{{ form.file.label }} {{ form.file }}</li>
 			<li>{{ form.status.label }} {{ form.status }}</li>
 			<li><input type='submit' value='Сохранить' /></li>
 		</ol>

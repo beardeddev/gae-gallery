@@ -553,18 +553,18 @@ class FileWrapper(object):
     """
 
     def __init__(self, file, buffer_size=8192):
-        self.file = file
+        self.picture = file
         self.buffer_size = buffer_size
 
     def close(self):
-        if hasattr(self.file, 'close'):
-            self.file.close()
+        if hasattr(self.picture, 'close'):
+            self.picture.close()
 
     def __iter__(self):
         return self
 
     def next(self):
-        data = self.file.read(self.buffer_size)
+        data = self.picture.read(self.buffer_size)
         if data:
             return data
         raise StopIteration()

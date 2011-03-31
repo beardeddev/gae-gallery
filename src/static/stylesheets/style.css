@@ -51,7 +51,8 @@ ul li{border:0; margin:0; padding:0;}
 .body li { padding:5px 5px; margin:0; background:url(images/ul_li.gif) left no-repeat; font: normal 12px Arial, Helvetica, sans-serif; color:#5c5c5c;}
 .body a { color:#1286a2; text-decoration:underline;}
 .body a.bold { color:#fff; font:bold 11px Arial, Helvetica, sans-serif; background:#000; margin:0; padding:3px 5px; float:left; text-decoration:none;}
-.body img { float:left; margin:15px 15px 15px 0; padding:0; border: 0;}
+.body a.image-link { width: 208px; display: inline-block; margin: 15px 15px 15px 0; text-align: center;}
+.body img { margin:0 auto; padding: 5px; border: solid 1px #DDDDDD;}
 .body img.port { float:left; margin:10px 15px; padding:0;}
 .full  { width:952px; float:left; margin:0; padding:10px 15px;} 
 .left  { width:310px; float:left; margin:0; padding:10px 15px;} 

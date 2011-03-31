@@ -9,45 +9,64 @@ from flask import Flask, redirect, render_template, request, url_for, make_respo
 from google.appengine.ext.webapp.util import run_wsgi_app
 from models import *
 from forms import *
+from google.appengine.api import images
 
 app = Flask(__name__)
 app.debug = True
 
 @app.route("/")
 def hello():
-    images = Image.all()
-    return render_template('index.html', images = images, title='My Page')
+    pictures = Picture.all()
+    return render_template('index.html', pictures=pictures, title='My Page')
 
 @app.route("/edit.html", methods=['GET', 'POST'])
 def create():
-    if request.method == 'GET':
-        form = ImageForm()  
-        return render_template('edit.html', title=u'Добавить рисунок', form=form)
+    picture = Picture()
     
-    if request.method == 'POST':
-        image = Image()        
-        form = ImageForm(request.form, image)
-        if form.validate() and request.files['image']:
-            form.populate_obj(image)
-            image.file = request.files['image'].read()
-            image.content_type = request.files['image'].content_type
-            image.put()
-            return redirect(url_for("edit", id=image.key()))
+    if request.method == 'GET':
+        form = PictureForm()  
+        return render_template('edit.html', title=u'Добавить рисунок', form=form, picture=picture)
+    
+    if request.method == 'POST':                
+        form = PictureForm(request.form, picture)
+        if form.validate() and request.files['file']:
+            form.populate_obj(picture)
+            picture.data = request.files['file'].read()
+            picture.ext = request.files['file'].filename.rsplit('.', 1)[1]
+            picture.content_type = request.files['file'].content_type
+            picture.put()
+            return redirect(url_for("edit", id=picture.key()))
         else:
-            return render_template('edit.html', title=u'Добавить рисунок', form=form)
+            return render_template('edit.html', title=u'Добавить рисунок', form=form, picture=picture)
         
 
 @app.route("/edit/<id>.html", methods=['GET', 'POST'])
 def edit(id):
-    image = Image.get(id) 
-    form  = ImageForm(request.form, image)
-    return render_template('edit.html', title=u'Редактировать рисунок', form=form)      
+    picture = Picture.get(id)
+    form  = PictureForm(request.form, picture)
+    return render_template('edit.html', title=u'Редактировать рисунок', form=form, picture=picture)
 
-@app.route('/thumb/<id>.html')
-def thumb(id):
-    image = Image.get(id)
-    response = make_response(image.file)
-    response.headers['Content-Type'] = image.content_type
+@app.route("/<id>.html")
+def image(id):
+    picture = Picture.get(id)
+    return render_template('show.html', picture=picture)      
+
+@app.route('/thumb/<id>/<width>x<height>.<ext>')
+def thumb(id, width, height, ext):
+    picture = Picture.get(id)
+    img = images.Image(picture.data)  
+    w = int(width)
+    if height != '0':
+        h = int(height)
+    else:
+        h = img.height  
+    if img.height > h and h != 0:
+        w = (int(width) * img.width) / img.height;          
+    if img.width > w:
+        h = (int(height)  * img.height) / img.width;
+    thumb = images.resize(picture.data, width=w, height=h)    
+    response = make_response(thumb)
+    response.headers['Content-Type'] = picture.content_type
     return response
 
 if __name__ == "__main__":
