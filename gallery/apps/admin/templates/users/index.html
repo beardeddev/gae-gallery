@@ -1,0 +1,62 @@
+{% extends "admin/base.html" %} 
+{% block content %}
+<div class="box">
+	<div class="box-head">
+		<h3>{{title}}</h3>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<input type="checkbox" id="check_all" name="check_all" />
+				</th>
+				<th>Логин</th>
+				<th>Эл. адресс</th>
+				<th>Статус</th>
+				<th>Создано</th>
+				<th>Изменено</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+			<tr>
+				<td>
+					<input type="checkbox" id="check_all" name="check_all" />
+				</td>
+				<td>{{ user.login }}</td>
+				<td>{{ user.email }}</td>
+				<td>{{ user.status }}</td>
+				<td>{{ user.created_at.strftime("%d-%m-%y %H:%M") }}</td>
+				<td>{{ user.updated_at.strftime("%d-%m-%y %H:%M") }}</td>
+				<td>
+					<a href="{{ url_for('edit_user', id=user.key()) }}" title="Редактировать">
+						<img src="{{ url_for('static', filename='images/page_edit.gif') }}" alt="Редактировать" title="Редактировать" />
+					</a>
+					<a href="{{ url_for('delete_user', id=user.key()) }}" title="Удалить" onclick="return window.confirm('Вы уверенны что хотите удалить запись?')">
+						<img src="{{ url_for('static', filename='images/page_delete.gif') }}" alt="Удалить" title="Удалить" />
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %} 
+{% block left %}
+<div class="box">
+	<div class="box-head">
+		<h3>Управление пользователями</h3>
+	</div>
+	<div class="box-content">
+		<div class="controlslistmenu">
+			<ul>
+				<li><a href="{{ url_for('new_user') }}" class="add">Добавить
+						запись</a></li>
+				<li><a href="{{ url_for('destroy_users') }}" class="delete">Удалить
+						выбранные</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

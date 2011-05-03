@@ -1,0 +1,65 @@
+{% extends "admin/base.html" %} 
+{% block content %}
+<div class="box">
+	<div class="box-head">
+		<h3>{{title}}</h3>
+	</div>
+	<table>	
+	<thead>
+	<tr>
+		<th>
+			<input type="checkbox" id="check_all" name="check_all" />
+		</th>
+		<th></th>
+		<th></th>
+	</tr>
+	</thead>
+	<tbody>
+	{% for page in pages %}
+	<tr class="descr">
+		<td>
+			<input type="checkbox" id="check_all" name="check_all" />
+		</td>
+		<td style='width:90%'>
+			<h4>
+				<a href="{{ url_for('edit_page', id=page.key()) }}" title="Редактировать">
+					{{ page.title }}
+				</a>
+			</h4>
+			<i>{{ page.keywords }}</i>
+			<br />
+			<p>
+				{{ page.description }}
+			</p>
+		</td>
+		<td>
+			<a href="{{ url_for('edit_page', id=page.key()) }}" title="Редактировать">
+				<img src="{{ url_for('static', filename='images/page_edit.gif') }}" alt="Редактировать" title="Редактировать" />
+			</a>
+			<a href="{{ url_for('delete_page', id=page.key()) }}" title="Удалить" onclick="return window.confirm('Вы уверенны что хотите удалить запись?')">
+				<img src="{{ url_for('static', filename='images/page_delete.gif') }}" alt="Удалить" title="Удалить" />
+			</a>
+		</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+</div>
+{% endblock %}
+{% block left %}
+<div class="box">
+	<div class="box-head">
+		<h3>Управление рисунками</h3>
+	</div>
+	<div class="box-content">
+		<div class="controlslistmenu">
+			<ul>
+				<li><a href="{{ url_for('new_page') }}" class="add">Добавить
+						запись</a></li>
+				<li><a href="{{ url_for('destroy_pages') }}" class="delete">Удалить
+						выбранные</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

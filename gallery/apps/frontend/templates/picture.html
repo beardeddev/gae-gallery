@@ -1,0 +1,24 @@
+{% extends 'frontend/base.html' %}
+{% block content %}
+<div class="left sm345">
+	{{ forms.thumbnail_image_tag(picture.key(), picture.title, 310, 0, picture.ext) }}
+	<div class="clr"></div>
+	<ul>
+		<li><a href="{{ url_for('admin.edit_picture', id=picture.key()) }}">Редактировать</a></li>
+		<li><a href="{{ url_for('admin.delete_picture', id=picture.key()) }}"  onclick="return window.confirm('Вы уверенны что хотите удалить рисунок')">Удалить</a></li>
+	</ul>
+</div>
+<div class="left">
+	<h2>{{ picture.title }}</h2>
+	<p>
+		<span>
+		{{ picture.sub_title }}
+		</span>
+	</p>
+
+	<p>{{ picture.description }}</p>
+	<ul>
+		<li><strong>Добавлено:</strong> {{ picture.created_at.strftime("%d-%m-%y") }}</li>
+	</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,725 @@
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/* This removes the border around the viewport in old versions of IE */
+	width: 100%;
+	background: #fff;
+	min-width: 600px;
+	/* Minimum width of layout - remove line if not required */
+	/* The min-width property does not work in old versions of Internet Explorer */
+	font-size: 90%;
+}
+
+h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+}
+
+/* headings */
+
+h4, h4 a {
+	color: #007EBF;
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 0px;
+	margin-bottom: 5px;
+}
+
+/* Header styles */
+#header {
+	clear: both;
+	width: 100%;
+	height: 7em;
+	padding-left: 2em;
+}
+
+#header h1 {
+	position: absolute;
+	top: 0.1em;
+	font-size: 2.2em;
+	letter-spacing: -0.05em;
+}
+
+#header h1 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#header h2 {
+	position: absolute;
+	font-size: 0.8em;
+	top: 5em;
+	color: #E0E8EF;
+}
+
+/* breadcrumbs */
+.breadcrumb {
+	font: bold;
+	margin: 5px auto;
+	clear: both;
+	padding-left: 2em;
+}
+
+.breadcrumb a {
+	text-decoration: none;
+	padding: 0 8px; /*adjust bullet image padding*/
+	color: #0451A0;
+}
+
+.breadcrumb a:visited,.breadcrumb a:active {
+	color: navy;
+}
+
+.breadcrumb a:hover {
+	text-decoration: underline;
+}
+
+/* column container */
+.colmask {
+	position: relative; /* This fixes the IE7 overflow hidden bug */
+	clear: both;
+	float: left;
+	width: 100%; /* width of whole page */
+	overflow: hidden; /* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,.colmid,.colleft {
+	float: left;
+	width: 100%; /* width of page */
+	position: relative;
+}
+
+.col1,.col2,.col3 {
+	float: left;
+	position: relative;
+	padding: 0 0 1em 0;
+	/* no left and right padding on columns, we just make them narrower instead 
+						only padding top and bottom is included here, make it whatever value you need */
+	overflow: hidden;
+}
+/* 3 Column blog style settings */
+.blogstyle {
+	background: #FFF; /* right column background colour */
+}
+
+.blogstyle .colmid {
+	right: 25%; /* width of the right column */
+}
+
+.blogstyle .colleft {
+	right: 25%; /* width of the middle column */
+}
+
+.blogstyle .col1 {
+	width: 67%;
+	/* width of center column content (column width minus padding on either side) */
+	left: 52%; /* 100% plus left padding of center column */
+}
+
+.blogstyle .col2 {
+	width: 21%;
+	/* Width of left column content (column width minus padding on either side) */
+	left: 56%;
+	/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+
+.blogstyle .col3 {
+	width: 21%;
+	/* Width of right column content (column width minus padding on either side) */
+	left: 60%; /* Please make note of the brackets here:
+						(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+/* Footer styles */
+#footer {
+	clear: both;
+	float: left;
+	width: 100%;
+	border-top: 1px solid #E8E8E8;
+}
+
+#footer p {
+	padding: 10px;
+	margin: 0;
+}
+
+/* top navigation */
+.menu {
+	margin: 5px auto;
+	clear: both;
+}
+
+.menu a {
+	text-decoration: none;
+}
+
+.menu p {
+	margin: 0 0 17px;
+	padding: 0;
+	line-height: 18px;
+}
+
+.menu {
+	margin: 5px auto;
+}
+
+.nav {
+	float: left;
+	width: 96%;
+}
+
+.nev-wrapper {
+	clear: both;
+	float: left;
+}
+
+.nav-left {
+	float: left;
+	width: 11px;
+	height: 41px;
+}
+
+.nav-right {
+	float: left;
+	width: 11px;
+	height: 41px;
+}
+
+.nav ul {
+	height: 38px;
+	float: left;
+	margin: 0;
+	padding-top: 3px;
+	list-style: none;
+	font-size: 15px;
+}
+
+.nav li {
+	float: left;
+	padding: 0 7px;
+	position: relative;
+	z-index: 1;
+}
+
+.nav li.last {
+	background: none;
+}
+
+.nav li:hover {
+	z-index: 2;
+}
+
+.nav li a {
+	display: block;
+	line-height: 38px;
+	overflow: hidden;
+	float: left;
+}
+
+a .menu-left {
+	width: 8px;
+	height: 32px;
+	line-height: 35px;
+	display: block;
+	float: left;
+}
+
+a .menu-mid {
+	height: 32px;
+	line-height: 35px;
+	display: block;
+	float: left;
+}
+
+a .menu-right {
+	width: 8px;
+	height: 32px;
+	line-height: 35px;
+	display: block;
+	float: left;
+}
+
+.nav li a:hover .menu-left,.nav li.active a .menu-left,.nav li:hover a .menu-left,.nav li a:hover .menu-mid,.nav li.active a .menu-mid,.nav li:hover a .menu-mid,.nav li a:hover .menu-right,.nav li.active a .menu-right,.nav li:hover a .menu-right
+	{
+	background-position: 0 -37px;
+	line-height: 35px;
+}
+
+.nav li a:hover,.nav li.active a,.nav li.hover a,.nav li:hover a {
+	color: #09548B;
+}
+
+.nav li:hover .sub,.nav li.hover .sub {
+	display: block;
+}
+
+.nav li .sub {
+	display: none;
+	position: absolute;
+	top: 27px;
+	left: 6px;
+	width: 186px;
+	padding-top: 9px;
+}
+
+.nav li ul {
+	width: 162px;
+	height: auto;
+	margin: 0;
+	padding: 0 12px 10px;
+	list-style: none;
+	font-size: 14px;
+}
+
+.nav li:hover li,.nav li.active li {
+	width: 100%;
+	padding: 1px 0 2px;
+	border-bottom: 1px #C1D9F0 dashed;
+	background: none !important;
+}
+
+.nav li:hover li a,.nav li.active li a {
+	color: #09548B;
+	background: none !important;
+	line-height: normal;
+	width: 156px;
+	padding: 8px 3px 3px;
+	text-indent: 1px;
+}
+
+.nav li:hover li a:hover,.nav li.active li a:hover {
+	color: #fff;
+	background: #165B9F !important;
+	text-decoration: none;
+	line-height: normal;
+}
+/*IE*/
+.nav li li a:hover,.nav li li a:hover {
+	color: #fff;
+	background: #165B9F !important;
+	text-decoration: none;
+	line-height: normal;
+}
+/**/
+.nav .btm-bg {
+	width: 205px;
+	height: 9px;
+	overflow: hidden;
+	clear: both;
+}
+
+/* sidebar navigation */
+.arrowlistmenu {
+	width: 180px; /*width of menu*/
+}
+
+.arrowlistmenu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 0 0 0;
+	margin-bottom: 8px;
+	/*bottom spacing between each UL and rest of content*/
+}
+
+.arrowlistmenu ul li {
+	padding-bottom: 2px; /*bottom spacing between menu items*/
+	margin-left: 10px;
+}
+
+.arrowlistmenu ul li a {
+	display: block;
+	padding: 2px 0;
+	padding-left: 19px; /*link text is indented 19px*/
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 90%;
+	width: 100%;
+}
+
+/* sidebar controls */
+.controlslistmenu ul {
+	list-style-image: none;
+	list-style: none;
+	padding: 0;
+}
+
+.controlslistmenu ul li {
+	list-style-image: none;
+	list-style: none;
+	margin-top: 10px;
+}
+
+.controlslistmenu ul {
+	margin: 15px;
+}
+
+/* boxes */
+.box {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 0 6px #978f6c;
+	-webkit-box-shadow: 0 0 6px #978f6c;
+}
+
+.box-head,form fieldset,form legend {
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+.box {
+	padding: 1px;
+	margin-bottom: 20px;
+}
+
+.box-head {
+	height: 32px;
+	padding: 0 10px;
+	line-height: 32px;
+	white-space: nowrap;
+}
+
+/* tables */
+table {
+	margin-bottom: 1.5em;
+	border-collapse: collapse;
+	text-align: left;
+	width: 100%;
+	font-size: 90%;
+}
+
+table th {
+	font-weight: bold;
+	padding: 0.5em;
+}
+
+table td {
+	padding: 0.5em;
+}
+
+table a {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/* table 1 */
+table tr.descr {
+	border: 1px solid #DDD;	
+}
+
+table tr.descr p {
+	margin: 0px;
+	padding-bottom: 5px;
+	padding-top: 0px;
+	font-size: 11px;
+	line-height: 14px;
+}
+/* forms */
+form {
+	padding: 10px;
+	margin: 0 auto;
+}
+
+form ol,form ul {
+	list-style: none;
+	padding: 15px;
+	margin: 0;
+}
+
+form ol li,form ul li {
+	clear: both;
+}
+
+form fieldset {
+	display: block;
+	padding: 5px 10px 5px 10px;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+form legend {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding: 3px;
+	width: 254px;
+}
+
+form label {
+	display: block;
+	padding-right: 10px;
+	margin-top: 5px;
+	font-weight: bold;
+	float: left;
+	width: 175px;
+}
+
+form input {
+	padding: 3px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+form input[type=submit], form input[type=reset] {
+	width: 40%;
+}
+
+form select {
+	margin-left: 5px;
+}
+
+form textarea {
+	width: 100%;
+	height: 400px;
+	padding: 5px;
+	overflow: auto;
+}
+
+form option {
+	
+}
+
+form optgroup option {
+	
+}
+
+form input,form textarea,form select {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#description, #keywords {
+	height: 57px;	
+}
+
+/* sidebar filter */
+.col3 .menu {
+	margin-bottom: 10px;
+}
+
+.col3 .menu h2 {
+	font: bold 13px Verdana;
+	color: white;
+	background: #007EBF;
+	/*last 2 values are the x and y coordinates of bullet image*/
+	margin-bottom: 0; /*bottom spacing between header and rest of content*/
+	text-transform: uppercase;
+	padding: 7px 0 7px 15px; /*31px is left indentation of header text*/
+}
+
+.col3 .menu h2 {
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-left-radius: 5px 5px;
+	border-top-right-radius: 5px 5px;
+}
+
+.col3 .menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 0;
+	/*bottom spacing between each UL and rest of content*/
+}
+
+.col3 .menu ul li {
+	padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.col3 .menu ul li a {
+	font: normal 12px Arial;
+	color: black;
+	background: #E9E9E9;
+	display: block;
+	padding: 5px 0;
+	line-height: 17px;
+	padding-left: 8px; /*link text is indented 8px*/
+	text-decoration: none;
+}
+
+.col3 .menu ul li a:visited {
+	color: black;
+}
+
+.col3 .menu ul li a:hover {
+	color: white;
+	background: black;
+}
+
+.col3 form ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	list-style-image: none;
+}
+
+.col3 input {
+	width: 175px !important;
+}
+
+.col3 input[type=submit] {
+	font-size: 10px;
+	width: 85px !important;
+	display: table-cell;
+	margin-left: 5px;
+}
+
+/* iconic links */
+.add {
+	display: block;
+	background: url(../images/icon_plus.gif) no-repeat;
+	line-height: 24px;
+	text-decoration: none;
+	padding-left: 26px;
+}
+
+.delete {
+	display: block;
+	background: url(../images/icon_minus.gif) no-repeat;
+	line-height: 24px;
+	text-decoration: none;
+	padding-left: 26px;
+}
+
+a.edit img,a.delete {
+	paddin: 0;
+	margin: 0;
+	border: none;
+}
+
+/* specific styles */
+.clr, .clear {
+	clear: both;
+}
+
+/* -- Form message -- */
+.form-message {
+	display: block;
+	padding: 10px 20px 10px 35px;
+	margin: 20px 5px;
+	border: 1px solid;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.form-message.correct {
+	border-color: #a8f383;
+	background: #e4ffd4 url(../images/correct.gif) 10px 11px no-repeat;
+}
+
+.form-message.error {
+	border-color: #f3a48c;
+	background: #ffded4 url(../images/error.gif) 10px 11px no-repeat;
+}
+
+.form-message.warning {
+	border-color: #fbea81;
+	background: #fff9d4 url(../images/warning.gif) 10px 11px no-repeat;
+}
+
+.form-message p {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.form-message ul {
+	margin: 5px 0 0 20px;
+	padding: 0;
+}
+
+.form-message ul li {
+	margin: 0;
+	padding: 0;
+	list-style: disc;
+	font-size: 1em !     impotant;
+	line-height: 1.6em;
+}
+
+.flashes {
+	display: block;
+	padding: 10px 20px 10px 35px;
+	margin-bottom: 20px;
+	border: none;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+/* *********************************************************************
+ * Gallery
+ * *********************************************************************/
+.gallery li {
+	display: inline-block;
+	float: left;
+	vertical-align: top;
+}
+
+.gal-large li {
+	width: 88px;
+	margin: 5px 5px 0px 5px;
+	padding-bottom: 10px;
+}
+
+.gal-large .thumb {
+	display: block;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #BBBBBB;
+	padding: 3px;
+	background: #FFFFFF;
+	margin-bottom: 4px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.gal-large .title {
+	color: #333333;
+	display: block;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0px 6px 0px 6px;
+	background: url('ui-bg_gl.png') left center repeat-x;
+	border: 1px solid #DDDDDD;
+	border-bottom: 1px solid #CCCCCC;
+	text-align: center;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.gal-large .title .wrap {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.gal-large li:hover .title {
+	color: #FFFFFF;
+	height: 20px;
+	position: relative;
+	border-width: 0px;
+	padding: 0px;
+}
+
+.gal-large li:hover .wrap {
+	padding: 0px 6px 0px 6px;
+	border: 1px solid #333333;
+	min-width: 74px;
+	overflow: visible;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #333333;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+

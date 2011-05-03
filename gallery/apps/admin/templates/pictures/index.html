@@ -1,0 +1,38 @@
+{% extends "admin/base.html" %} 
+{% block content %}
+<div class="box">
+	<div class="box-head">
+		<h3>{{title}}</h3>
+	</div>
+	<div class="gallery gal-large">
+		<ul class="clear">
+		{% for picture in pictures %}
+			<li>
+				<a href="{{ url_for('edit_picture', id=picture.key()) }}" rel="group1" title="{{ picture.title }}">
+					<img src="{{ url_for('frontend.thumbnail', id=picture.key(), width=80, height=80, ext=picture.ext) }}" alt="{{ picture.title }}" class="thumb" />
+				</a>
+				<span class="title"><span class="wrap">редактировать</span></span>
+			</li>
+		{% endfor %}			
+		</ul>
+		<div class="clr"></div>
+	</div>
+</div>
+{% endblock %}
+{% block left %}
+<div class="box">
+	<div class="box-head">
+		<h3>Управление рисунками</h3>
+	</div>
+	<div class="box-content">
+		<div class="controlslistmenu">
+			<ul>
+				<li><a href="{{ url_for('new_picture') }}" class="add">Добавить
+						запись</a></li>
+				<li><a href="{{ url_for('destroy_pictures') }}" class="delete">Удалить
+						выбранные</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

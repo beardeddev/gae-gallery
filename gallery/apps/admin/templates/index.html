@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="icons">
+<ul>
+	<li><a href="{{ url_for('pages') }}"> <img
+			src="{{ url_for('static', filename='images/page.png') }}">
+			<span>Страницы</span> </a></li>
+	<li><a href="{{ url_for('new_page') }}"> <img
+			src="{{ url_for('static', filename='images/page_edit.png') }}">
+			<span>Добавить страницу</span> </a></li>	
+	<li><a href="{{ url_for('pictures') }}"> <img
+			src="{{ url_for('static', filename='images/photo.png') }}">
+			<span>Рисунки</span> </a></li>
+	<li><a href="{{ url_for('users') }}"> <img
+			src="{{ url_for('static', filename='images/users.png') }}">
+			<span>Пользователи</span> </a></li>		
+</ul>
+</div>
+{% endblock %}

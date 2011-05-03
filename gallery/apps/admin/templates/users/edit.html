@@ -1,0 +1,15 @@
+{% extends 'admin/base.html' %} 
+{% block content %}
+<div class="box">
+	<div class="box-head">
+		<h3>{{ title }}</h3>
+	</div>
+	<form action="{{ url_for('update_user', id=user.key()) }}" method="post">
+		{{ forms.summary(form) }}		
+		{% include 'admin/users/form.html' %}
+		<div align="center">
+			<input type="submit" value="Сохранить" /> <input type="reset" />
+		</div>
+	</form>
+</div>
+{% endblock %}

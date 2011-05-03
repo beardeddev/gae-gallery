@@ -1,0 +1,8 @@
+{% extends "frontend/base.html" %}
+{% block content %}
+	{% for picture in pictures %}
+		<a class="image-link" href="{{ url_for('picture', id=picture.key()) }}">	
+			{{ forms.thumbnail_image_tag(picture.key(), picture.title, 208, 304, picture.ext) }}
+		</a>
+	{% endfor %}
+{% endblock %}

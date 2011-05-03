@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>
-{% for picture in pictures %}
-	<a class="image-link" href="{{ url_for('image', id=picture.key()) }}"><img src="{{ url_for('thumb', id=picture.key(), width=208, height=304, ext=picture.ext) }}" /></a>
-{% endfor %}
-</h1>
-{% endblock %}

@@ -1,0 +1,200 @@
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	background: #F1F1F1;
+	min-width: 600px;
+	font-size: 90%;
+}
+
+/* Header styles */
+#header {
+	clear: both;
+	float: left;
+	width: 100%;
+	background-color: #000;
+}
+
+.block_header {
+	margin: 0 auto;
+	width: 982px;
+	padding: 0;
+	border-bottom: 1px solid #3b3b3b;
+}
+/* logo */
+.logo {
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 306px;
+}
+
+.logo h1 a {
+	color: #E8E8E8;
+	text-decoration: none;
+	font-size: 24px;
+}
+/* menu */
+.menu {
+	float: right;
+	padding: 30px 0 0 0;
+	margin: 0;
+	width: 580px;
+}
+
+.menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	border: 0;
+}
+
+.menu ul li {
+	float: left;
+	margin: 0;
+	padding: 1px 1px 0 0;
+	border: 0;
+}
+
+.menu ul li a {
+	float: left;
+	margin: 0;
+	padding: 15px 10px;
+	color: #909090;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.menu ul li a:hover {
+	color: #fff;
+}
+
+.menu ul li a.active {
+	color: #fff;
+}
+
+/* column container */
+.colmask {
+	position: relative;
+	clear: both;
+	float: left;
+	width: 100%; /* width of whole page */
+	overflow: hidden; /* This chops off any overhanging divs */
+}
+/* 2 column left menu settings */
+.leftmenu {
+	
+}
+
+.leftmenu .colright {
+	float: left;
+	width: 200%;
+	position: relative;
+	left: 12em;
+}
+
+.leftmenu .col1wrap {
+	float: right;
+	width: 50%;
+	position: relative;
+	right: 12em;
+	padding-bottom: 1em;
+}
+
+.leftmenu .col1 {
+	margin: 0 1em 0 13em;
+	position: relative;
+	right: 100%;
+	overflow: hidden;
+	padding: 10px 5px 5px 0;
+}
+
+.leftmenu .col2 {
+	float: left;
+	width: 10em;
+	position: relative;
+	right: 11em;
+}
+
+/* Footer styles */
+#footer {
+	clear: both;
+	float: left;
+	width: 100%;
+	border-top: 1px solid #000;
+}
+
+#footer p {
+	padding: 10px;
+	margin: 0;
+}
+
+/* body styles */
+a {
+	color: #1286a2;
+	text-decoration: underline;
+}
+
+a.bold {
+	color: #fff;
+	font: bold 11px Arial, Helvetica, sans-serif;
+	background: #000;
+	margin: 0;
+	padding: 3px 5px;
+	float: left;
+	text-decoration: none;
+}
+
+img {
+	float: left;
+	margin: 15px 15px 15px 0;
+	padding: 0;
+	border: 0;
+}
+
+img.thumb {
+	float: left;
+	margin: 10px 15px;
+	padding: 5px;
+	border: 1px solid #CBC9D4;
+}
+
+.left {	
+	float: left;
+	margin: 0;
+	padding: 10px 15px;
+	width:50%;
+}
+
+.right {	
+	float: right;
+	margin: 0;
+	padding: 10px 10px 10px 15px;
+}
+
+.sm345{
+	width: 345px;
+}
+
+ul {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.clr {
+	clear: both;
+}
+
+p span {
+	color: #a4a4a4;
+	font: normal Arial, Helvetica, sans-serif;
+}

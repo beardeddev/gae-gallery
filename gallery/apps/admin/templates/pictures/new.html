@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %} 
+{% block content %}
+<div class="box">
+	<div class="box-head">
+		<h3>{{ title }}</h3>
+	</div>
+	{{ forms.summary(form) }}
+	{{ forms.flash() }}
+	<form action="{{ url_for('create_picture') }}" enctype="multipart/form-data" method="post">
+		{% include "admin/pictures/form.html" %}	
+		<div align="center">
+			<input type="submit" value="Сохранить" /> <input type="reset" />
+		</div>
+	</form>
+</div>
+{% endblock %}

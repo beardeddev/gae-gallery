@@ -1,0 +1,80 @@
+{% import "admin/forms.html" as forms -%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+<title>{{ title }}</title>
+<meta http-equiv="Content-Type"	content="application/xhtml+xml; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/screen.css') }}" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/theme.css') }}" media="screen" />
+</head>
+<body>
+	<div id="header">
+		<h1>
+			<a href="/admin/">Панель управления</a>
+		</h1>
+		<h2>by beardeddev</h2>
+	</div>
+	<div class="menu nav-wrapper">
+		<div class="nav-left"></div>
+		<div class="nav">
+			<ul id="navigation">
+				<li>
+					<a href="/admin/">
+						<span class="menu-left"></span>
+						<span class="menu-mid">Панель управления</span>
+						<span class="menu-right"></span> 
+					</a>
+				</li>
+				<li class="">
+					<a href="{{ url_for('pictures') }}">
+						<span class="menu-left"></span>
+						<span class="menu-mid">Контент</span>
+						<span class="menu-right"></span> 
+					</a>
+					<div class="sub">
+						<ul>
+							<li>
+								<a href="{{ url_for('pictures') }}">Рисунки</a>
+							</li>
+							<li>
+								<a href="{{ url_for('pages') }}">Страницы</a>
+							</li>
+						</ul>
+						<div class="btm-bg"></div>
+					</div>
+				</li>				
+				<li {% if request.path.find("/admin/users/") > -1 %}  class="last active" {% else %} class="last" {% endif %}>
+					<a href="{{ url_for('users') }}">
+						<span class="menu-left"></span>
+						<span class="menu-mid">Пользователи</span>
+						<span class="menu-right"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="nav-right"></div>
+	</div>
+	<div class="clear"></div>
+	<div class="colmask blogstyle">
+		<div class="colmid">
+			<div class="colleft">
+				<div class="col1">
+					{% block content %}					
+					{% endblock %}
+				</div>
+				<div class="col2">
+					{% block left %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<p>&copy; beardeddev</p>
+	</div>
+</body>
+</html>

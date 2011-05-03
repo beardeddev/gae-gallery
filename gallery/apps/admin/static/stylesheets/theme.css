@@ -1,0 +1,197 @@
+/* header */
+#header {
+	background: #0274b2 url(../images/a5.gif) bottom left repeat-x;
+}
+
+/*boxes */
+.box {
+	border: solid 2px #f4f4f4;
+	height: 100%;
+}
+
+.box-head {
+	background: #007EBF;
+	color: #FFF;
+}
+
+/* top navigation */
+.menu {
+	color: #44433f;
+	font: 14px "Futura Medium", "Myriad Pro", "Gill Sans", Helvetica,
+		Verdana, Arial, sans-serif;
+}
+
+.menu a {
+	color: #E5F2FB;
+}
+
+.menu a:hover {
+	color: #09548B;
+}
+
+.nav {
+	background: #fff url(../images/nav_bg.png) repeat-x;
+}
+
+.nav-left {
+	background: url(../images/nav_left.png) no-repeat top left;
+}
+
+.nav-right {
+	background: url(../images/nav_right.png) no-repeat top right;
+}
+
+.nav li {
+	background: url(../images/split.png) no-repeat right center;
+}
+
+a .menu-left {
+	background: url(../images/menu_left.gif) no-repeat left top;
+}
+
+a .menu-mid {
+	background: url(../images/menu_mid.gif) repeat-x top left;
+}
+
+a .menu-right {
+	background: url(../images/menu_right.gif) no-repeat top left;
+}
+
+.nav li .sub {
+	background: url(../images/submenu_top.png) no-repeat;
+}
+
+.nav li ul {
+	background: url(../images/submenu_bg.png) repeat-y;
+}
+
+.nav .btm-bg {
+	background: url(../images/submenu_bottom.png) no-repeat;
+}
+
+/* sidebar navigation */
+.arrowlistmenu ul li {
+	border-bottom: 1px solid #dadada;
+	width: 100%;
+}
+
+.arrowlistmenu ul li a {
+	color: #0479DE;
+	background: url(../images/arrowbullet.png) no-repeat center left;
+	/*custom bullet list image*/
+}
+
+.arrowlistmenu ul li a:visited {
+	color: #0479DE;
+}
+
+.arrowlistmenu ul li a:hover { /*hover state CSS*/
+	color: #0479DE;
+	background-color: #F3F3F3;
+}
+
+/* sidebar controls */
+.controlslistmenu ul li {
+	background: bottom url(../images/lines_dotted_short.gif) repeat-x;
+}
+
+.controlslistmenu ul li a {
+	color: #0479DE;
+}
+
+/* tables */
+table thead {
+	background: #fff url(../images/nav_bg.png) repeat-x;
+}
+
+table th {
+	color: #fff;
+	background: url(../images/split.png) no-repeat scroll right center
+}
+
+table tr.even {
+	background: #F8F8F8 url(../images/a6.gif) top left repeat-x;
+	border-top: solid 1px #fff;
+	color: inherit;
+}
+
+table tr.odd {
+	background: #FDFDFD url(../images/a7.gif) top left repeat-x;
+	border-top: solid 1px #fff;
+	color: inherit;
+}
+
+table tbody tr:hover {
+	background: #fff4cc;
+}
+
+/* forms */
+form label {
+	color: #0451a0;
+}
+
+form input,form textarea,form select {
+	border: 1px solid #d9e6f0;
+}
+
+form fieldset {
+	border: 1px solid #d9e6f0;
+}
+
+form legend {
+	border: 1px solid #d9e6f0;
+	background: #EDF3F8;
+	color: #375b91;
+}
+
+form input {
+	border: 1px solid #d9e6f0;
+	background: #fff url(../images/form_blue.gif) repeat-x top left;
+}
+
+form textarea {
+	border: 1px solid #d9e6f0;
+	background: #fff url(../images/form_blue.gif) repeat-x bottom left;
+}
+
+form option {
+	background: #FFF;
+}
+
+form optgroup {
+	background: #d9e6f0;
+}
+
+/* dashboard icons */
+.icons {
+	text-align: center;
+}
+
+.icons ul li {
+	width: 90px;
+	margin: 0 20px 20px 0;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+}
+
+.icons ul li a {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 15px #F4F4F4;
+	-moz-box-shadow: inset 0 0 15px #F4F4F4;
+	box-shadow: inset 0 0 15px #F4F4F4;
+}
+
+.icons ul li a {
+	display: block;
+	padding: 5px;
+	border: 1px solid #F1F1F1;
+}
+
+.icons ul li a {
+	color: #0D8B9B;
+	text-decoration: none;
+}

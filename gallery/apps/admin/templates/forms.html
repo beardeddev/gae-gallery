@@ -1,0 +1,35 @@
+{% macro summary(form) -%}
+	{% if form.errors %}
+	<div class="form-message error">
+		<p>Возникли следующие ошибки при добавлении записи:</p>
+		<ul>
+			{% for e in form.errors %} 
+				{% for error in form.errors[e] %}
+					<li>{{error}}</li> 
+				{% endfor %} 
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+{%- endmacro %}
+
+{% macro thumbnail_image_tag(key, title='', width=0, height=0, ext='jpg') -%}
+<img src="{{ url_for('frontend.thumbnail', id=key, width=width, height=height, ext=ext) }}" title="{{ title }}" />
+{%- endmacro %}
+
+{% macro flash() %}
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+	  	<script type="text/javascript">
+	    {% for category, message in messages %}
+	    	$.gritter.add({
+				title: 'Системное сообщение',
+	    		text: '{{ message }}',
+	    		class_name: "{{ category }}",
+	    		image: "/static/images/info.png"
+	    	});
+	    {% endfor %}	    
+	    </script>
+	  {% endif %}
+	{% endwith %}
+{% endmacro %}
